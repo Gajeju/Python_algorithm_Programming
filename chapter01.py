@@ -54,3 +54,90 @@ print(f'max3(2, 3, 3) = {max(2, 3, 3)}')    # b = c > a
 print(f'max3(1, 2, 3) = {max(1, 2, 3)}')    # c > b > a
 
 # 중앙값
+'''
+def med3(a, b, c):
+    if a >= b:
+        if b >= c:
+            return b
+        elif a <= c:
+            return a
+        else:
+            return c
+    elif a > c:
+        return a
+    elif b > c:
+        return c
+    else:
+        return b
+
+print('세 정수의 중앙값을 구합니다.')
+a = int(input('정수 a의 값을 입력하세요.: '))
+b = int(input('정수 b의 값을 입력하세요.: '))
+c = int(input('정수 c의 값을 입력하세요.: '))
+
+print(f'중앙값은 {med3(a, b, c)}입니다.')
+'''
+
+def med3(a, b, c):
+    if (b >= a and c  <= a) or (b <= a and c >= a):
+        return a
+    elif (a > b and c < b) or (a < b and c > b):
+        return b
+    return c
+
+# 조건과 분김
+'''
+n = int(input('정수를 입력하세요.: '))
+
+if n > 0:
+    print('이 수는 양수입니다.')
+elif n < 0:
+    print('이 수는 음수입니다.')
+else:
+    print('이 수는 0입니다.')
+'''
+'''
+n = int(input('정수를 입력하세요.:'))
+
+if n == 1:
+    print('A')
+elif n == 2:
+    print('B')
+else:
+    print('C')
+'''
+'''
+n = int(input('정수를 입력하세요.: '))
+
+if n == 1:
+    print('A')
+elif n == 2:
+    print('B')
+elif n == 3:
+    print('C')
+
+n = int(input('정수를 입력하세요.'))
+
+if n == 1:
+    print('A')
+elif n == 2:
+    print('B')
+elif n == 3:
+    print('C')
+else:
+    pass
+'''
+
+# 반복
+print ('1부터 n까지 정수의 합을 구합니다.')
+n = int(input('n값을 입력하세요.: '))
+
+sum = 0
+i = 1
+
+while i <= n:
+    sum += i
+    i += 1
+print(f'1부터 {n}까지 정수의 합은 {sum}입니다.')
+
+
