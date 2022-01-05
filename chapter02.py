@@ -55,3 +55,22 @@ x = [1, 2, 3]
 a, b, c = x
 print(a, b, c)
 
+# 인덱스
+
+x = [11, 22, 33, 44, 55, 66, 77]
+print(x[2])
+print(x[-3])
+
+x[-4] = 3.14
+print(x)
+#print(x[7])     #error !
+#x[7] = 3.14     #error !
+
+# 슬라이스
+s = [11, 22, 33, 44, 55, 66, 77]
+print(s[0:6])
+print(s[0:7])
+print(s[0:7:2])
+print(s[-4:-2])
+print(s[3:1])
+
