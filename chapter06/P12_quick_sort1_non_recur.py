@@ -32,7 +32,7 @@ def quick_sort(a: MutableSequence) -> None:
     qsort(a, 0, len(a) - 1)
 
 if __name__ == '__main__':
-    print('배열을 나눕니다.')
+    print('퀵 정렬을 합니다.')
     num = int(input('원소 수를 입력하세요.: '))
     x = [None] * num
 
