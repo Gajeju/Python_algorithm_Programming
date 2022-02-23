@@ -29,4 +29,4 @@ if __name__ == '__main__':
 
     print('오름차순으로 정렬했습니다.')
     for i in range(num):
-        print(f'x[{i}] = {x[i]}') 
+        print(f'x[{i}] = {x[i]}')
