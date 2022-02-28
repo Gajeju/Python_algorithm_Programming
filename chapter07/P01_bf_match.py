@@ -10,7 +10,7 @@ def bf_match(txt: str, pat: str) -> int:
             pt += 1
             pp += 1
         else:
-            pt = pt + 1
+            pt = pt - pp + 1
             pp = 0
     
     return pt - pp if pp == len(pat) else -1
