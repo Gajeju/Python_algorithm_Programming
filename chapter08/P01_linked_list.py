@@ -86,3 +86,81 @@ class LinkedList:
             self.current = pre
             self.no -= 1
             
+    def remove(self, p: None) -> None:
+        """노드 p를 삭제"""
+        if self.head is not None:
+            if p is self.head():
+                self.remove_first()
+            else:
+                ptr = self.head
+            while ptr.next is not p:
+                ptr = ptr.next
+                if ptr is None:
+                    return
+            ptr.next = p.next
+            self.current = ptr
+            self.no -= 1
+
+        
+    def remove_current_node(self) -> None:
+        """주목 노드를 삭제"""
+        self.remove(self.current)
+
+
+    def clear(self) -> None:
+        """전체 노드를 삭제"""
+        while self.head is not None:
+            self.remove_first()
+        self.current = None
+        self.no = 0
+
+    
+    def next(self) -> bool:
+        """주목 노드를 한 칸 뒤로 이동"""
+        if self.current is None or self.current.next is None:
+            return False
+        self.current = self.current.next
+        return True
+
+
+    def print_current_node(self) -> None:
+        """주목 노드를 출력"""
+        if self.current is None:
+            print('주목 노드가 존재하지 않습니다.')
+        else:
+            print(self.current.data)
+    
+
+    def print(self) -> None:
+        """모든 노드를 출력"""
+        ptr = self.head
+
+        while ptr is not None:
+            print(ptr.data)
+            ptr = ptr.next
+
+    
+    def __iter__(self) -> LinkedListIterator:
+        """이터레이터를 반환"""
+        return LinkedListIterator(self.head)
+    
+
+class LinkedListIterator:
+    """클래스 LinkedList의 이터레이터용 클래스"""
+
+    def __init__(self, head: Node):
+        self.current = head
+
+
+    def __iter__(self) -> LinkedListIterator:
+        return self
+    
+
+    def __next__(self) -> Any:
+        if self.current is None:
+            raise StopIteration
+        else:
+            data = self.current.data
+            self.current = self.current.next
+            return data
+    
