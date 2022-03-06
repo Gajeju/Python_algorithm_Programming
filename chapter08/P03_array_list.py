@@ -1,6 +1,7 @@
 # 커서로 연결 리스트 구현하기
 
 from __future__ import annotations
+from this import d
 from typing import Any, Type
 
 from numpy import inexact
@@ -63,5 +64,31 @@ class ArrayLinkedList:
     def search(self, data: Any) -> int:
         """data와 값이 같은 노드를 탐색"""
         cnt = 0
+        ptr = self.head
+        while ptr != Null:
+            if self.n[ptr].data == data:
+                self.current = ptr
+                return cnt
+            cnt += 1
+            ptr = self.n[ptr].next
+        return Null
 
-        
+    
+    def __contains__(self, data: Any) -> bool:
+        """연결 리스트에 data가 포함되어 있는지 확인"""
+        return self.search(data) >= 0
+
+
+    def add_first(self, data: Any):
+        """머리 노드에 삽입"""
+        ptr = self.head
+        rec = self.get_insert_index()
+        if rec != Null:
+            self.head = self.current = rec
+            self.n[self.head] = Node(data, ptr)
+            self.no += 1
+
+    
+    def add_last(self, data: Any) -> None:
+        """꼬리 노드에 삽입"""
+        pass
