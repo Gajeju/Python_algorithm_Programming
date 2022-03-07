@@ -1,7 +1,7 @@
-# 포인터로 이용한 연결 리스트 클래스 LinkedList 사용하기
+# 커서를 이용한 연결 리스트 클래스 ArrayLinkedList 사용하기
 
 from enum import Enum
-from P01_linked_list import LinkedList
+from P03_array_list import ArrayLinkedList
 
 Menu = Enum('Menu', ['머리에노드삽입', '꼬리에노드삽입', '머리노드삭제',
                      '꼬리노드삭제', '주목노드출력', '주목노드이동',
@@ -18,7 +18,7 @@ def select_Menu() -> Menu:
             return Menu(n)
 
 
-lst = LinkedList()  # 연결 리스트를 생성
+lst = ArrayLinkedList(100)  # 연결 리스트를 생성
 
 while True:
     menu = select_Menu()  # 메뉴 선택
